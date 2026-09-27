@@ -1,0 +1,36 @@
+# macOS and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Python environments and caches
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Generated training data and experiment outputs
+framework_v1_rebuild/data/
+framework_v1_rebuild/outputs/
+framework_v1_rebuild/logs/
+framework_v1_rebuild/demo/*.mov
+framework_v1_rebuild/demo/*.mp4
+framework_v1_rebuild/demo/*.avi
+framework_v1_rebuild/.chart-data-*/
+framework_v1_rebuild/.ppt_build/
+.codex_ppt_build/
+
+# Archives and temporary files
+*.zip
+*.tar
+*.tar.gz
+*.tmp
+*.log

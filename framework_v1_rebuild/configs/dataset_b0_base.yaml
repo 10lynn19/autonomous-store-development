@@ -1,0 +1,8 @@
+path: C:/Market/framework_v1_rebuild/data/datasets_B/b0_base
+train: images/train
+val: images/val
+
+names:
+  0: coke_zero
+  1: oreo
+  2: goodwipes

@@ -1,0 +1,9 @@
+path: C:/Market/framework_v1_rebuild/data/datasets_B/test_ground_truth
+train: images/test
+val: images/test
+test: images/test
+
+names:
+  0: coke_zero
+  1: oreo
+  2: goodwipes
