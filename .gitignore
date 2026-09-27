@@ -18,14 +18,14 @@ __pycache__/
 !.env.example
 
 # Generated training data and experiment outputs
-framework_v1_rebuild/data/
-framework_v1_rebuild/outputs/
-framework_v1_rebuild/logs/
-framework_v1_rebuild/demo/*.mov
-framework_v1_rebuild/demo/*.mp4
-framework_v1_rebuild/demo/*.avi
-framework_v1_rebuild/.chart-data-*/
-framework_v1_rebuild/.ppt_build/
+data/
+outputs/
+logs/
+demo/*.mov
+demo/*.mp4
+demo/*.avi
+.chart-data-*/
+.ppt_build/
 .codex_ppt_build/
 
 # Archives and temporary files

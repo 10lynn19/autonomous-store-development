@@ -7,11 +7,11 @@
 ## 1. 项目目标与工作环境
 
 - 目标：用 YOLO12 对无人商店场景中的商品做目标检测，重点测试从白底旋转视频训练到真实部署摄像头场景的迁移能力。
-- 当前有效工作区：`framework_v1_rebuild/`
-- Windows 主训练路径：`C:\Market\framework_v1_rebuild`
-- Mac 当前同步副本：`/Users/lynn/Documents/Autonomous store development/framework_v1_rebuild`
+- 当前有效工作区：`autonomous-store-development/`
+- Windows 主训练路径：`C:\Market\autonomous-store-development`
+- Mac 当前同步副本：`/Users/lynn/Documents/Autonomous store development/autonomous-store-development`
 - 当前模型：Ultralytics `yolo12n.pt`。
-- `framework_v1_rebuild` 是与旧 V1–V8.1 隔离的干净重建实验；不要读取或混用旧项目的 checkpoint、dataset 或 output。
+- `autonomous-store-development` 是与旧 V1–V8.1 隔离的干净重建实验；不要读取或混用旧项目的 checkpoint、dataset 或 output。
 - 训练主要在 Windows GPU 上完成，Mac 用于整理、查看、同步结果和制作汇报。
 
 ## 2. 必须保持的实验规范
@@ -118,18 +118,18 @@
 
 ## 6. 当前关键文件位置
 
-- 总实验说明：`framework_v1_rebuild/docs/REBUILD_EXPERIMENT.md`
-- B 系列计划：`framework_v1_rebuild/docs/B_SERIES_EXPERIMENT.md`
-- 目录说明：`framework_v1_rebuild/docs/SERIES_DIRECTORY_STRUCTURE.md`
-- 固定训练配置：`framework_v1_rebuild/src/train_common.py`
-- A 测试程序：`framework_v1_rebuild/src/test_branches.py`
-- B 测试程序：`framework_v1_rebuild/src/test_b_branches.py`
-- A 数据配置：`framework_v1_rebuild/configs/dataset_a*.yaml`
-- B 数据配置：`framework_v1_rebuild/configs/dataset_b*.yaml`
-- A checkpoint：`framework_v1_rebuild/outputs/A_series/training/<branch>/weights/best.pt`
-- B checkpoint：`framework_v1_rebuild/outputs/B_series/training/<branch>/weights/best.pt`
-- A 测试结果：`framework_v1_rebuild/outputs/A_series/tests/<branch>_img1024_conf035/`
-- B 测试结果：`framework_v1_rebuild/outputs/B_series/tests/<branch>_img1024_conf035/`
+- 总实验说明：`autonomous-store-development/docs/REBUILD_EXPERIMENT.md`
+- B 系列计划：`autonomous-store-development/docs/B_SERIES_EXPERIMENT.md`
+- 目录说明：`autonomous-store-development/docs/SERIES_DIRECTORY_STRUCTURE.md`
+- 固定训练配置：`autonomous-store-development/src/train_common.py`
+- A 测试程序：`autonomous-store-development/src/test_branches.py`
+- B 测试程序：`autonomous-store-development/src/test_b_branches.py`
+- A 数据配置：`autonomous-store-development/configs/dataset_a*.yaml`
+- B 数据配置：`autonomous-store-development/configs/dataset_b*.yaml`
+- A checkpoint：`autonomous-store-development/outputs/A_series/training/<branch>/weights/best.pt`
+- B checkpoint：`autonomous-store-development/outputs/B_series/training/<branch>/weights/best.pt`
+- A 测试结果：`autonomous-store-development/outputs/A_series/tests/<branch>_img1024_conf035/`
+- B 测试结果：`autonomous-store-development/outputs/B_series/tests/<branch>_img1024_conf035/`
 - 视频统计：每个测试结果目录中的 `video_summary.csv`
 - Ground-truth 总指标：每个测试结果目录中的 `ground_truth_metrics.json`
 - A5/A6-P 的 per-class 指标：对应测试目录中的 `class_metrics.csv` 和 `README.md`
@@ -137,10 +137,10 @@
 ## 7. 最新完成产物（2026-09-21）
 
 - 已生成并通过渲染检查的 6 页汇报 PPT：
-  `framework_v1_rebuild/docs/presentation/AB_series_new_video_results.pptx`
+  `autonomous-store-development/docs/presentation/AB_series_new_video_results.pptx`
 - PPT 内容比较 A5、A6-P、B1、B4，并嵌入 multiple1/multiple2 的结果 GIF。
 - 最终渲染预览：
-  `framework_v1_rebuild/.ppt_build/ab_series_new_videos/final_render/`
+  `autonomous-store-development/.ppt_build/ab_series_new_videos/final_render/`
 - 最新产物时间约为 2026-09-21 12:53，本次原对话最后一轮随后被中断；因此 PPT 本体很可能已经完成，只是原任务没有正常返回最终消息。
 
 ## 8. 建议新对话从这里继续
@@ -156,9 +156,9 @@
 ## 9. 可直接贴到新对话的接手提示词
 
 ```text
-请接手 /Users/lynn/Documents/Autonomous store development/framework_v1_rebuild 的 YOLO12 无人商店商品检测项目。先完整阅读 /Users/lynn/Documents/Autonomous store development/YOLO12_CONVERSATION_MEMORY.md，再检查相关项目文件后继续，不要重新发明已经完成的流程。
+请接手 /Users/lynn/Documents/Autonomous store development/autonomous-store-development 的 YOLO12 无人商店商品检测项目。先完整阅读 /Users/lynn/Documents/Autonomous store development/YOLO12_CONVERSATION_MEMORY.md，再检查相关项目文件后继续，不要重新发明已经完成的流程。
 
 重要约束：不要混用旧 V1–V8.1 项目；每个实验分支必须从同一个 yolo12n.pt 独立训练；固定 validation/test split 和训练参数；test set 绝不能进入训练；视频 frame-rate 不是准确率，模型比较以 ground-truth metrics 和 per-class metrics 为准。
 
-当前已完成 A0/A1/A2/A3/A4-P/A4-S/A5/A6-P 和 B0/B1/B2/B4。最新汇报 PPT 在 framework_v1_rebuild/docs/presentation/AB_series_new_video_results.pptx。下一阶段重点是 pickup/occlusion 与 shelf hard negatives，而不是继续只堆 clean/phone 数据。
+当前已完成 A0/A1/A2/A3/A4-P/A4-S/A5/A6-P 和 B0/B1/B2/B4。最新汇报 PPT 在 autonomous-store-development/docs/presentation/AB_series_new_video_results.pptx。下一阶段重点是 pickup/occlusion 与 shelf hard negatives，而不是继续只堆 clean/phone 数据。
 ```

@@ -1,0 +1,12 @@
+path: C:/Market/autonomous-store-development/data/datasets_A
+train:
+  - a0_base/images/train
+  - a3_camera_addition/images/train
+  - camera_more_thinkbar_ziploc/images/train
+  - a2_phone_addition/images/train
+val: a0_base/images/val
+
+names:
+  0: coke_zero
+  1: think_protein_bar
+  2: ziploc_box

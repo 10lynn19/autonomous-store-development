@@ -1,0 +1,17 @@
+path: C:/Market/autonomous-store-development/data/datasets_B
+train:
+  - b0_base/images/train
+  - b1_camera_addition/images/train
+  - b_aug2_new_addition/images/train
+  - b6_six_product_split/images/train
+val:
+  - b0_base/images/val
+  - b6_six_product_split/images/val
+
+names:
+  0: coke_zero
+  1: oreo
+  2: goodwipes
+  3: cheetos
+  4: sprite
+  5: sour_patch_kids

@@ -1,0 +1,10 @@
+path: C:/Market/autonomous-store-development/data/datasets_B
+train:
+  - b0_base/images/train
+  - b2_phone_addition/images/train
+val: b0_base/images/val
+
+names:
+  0: coke_zero
+  1: oreo
+  2: goodwipes
